@@ -6,7 +6,8 @@ import LinkedInLogo from "./i/linked-in-logo.png";
 import { MutableRefObject, useRef } from "react";
 
 export default function Home() {
-  const contentWrapper = "m-20 w-50 h-screen m-10";
+  const contentWrapper = "w-50 h-screen my-10";
+  const title = "text-3xl pb-6";
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
 
@@ -44,7 +45,7 @@ export default function Home() {
         <div className="w-0.5" />
         <div className="flex flex-col justify-around overflow-y-auto px-8 w-2/3">
           <div className={contentWrapper} ref={aboutRef}>
-            <p>About</p>
+            <p className={title}>About</p>
             <p>
               My name is Jordan Barton and I am a Software Developer from Prince
               George's County Maryland
@@ -59,11 +60,16 @@ export default function Home() {
             </p>
           </div>
           <div className={contentWrapper} ref={projectsRef}>
-            Project 1
+            <p className={title}>Project 1</p>
+            <p>Here's information about project 1</p>
+            <p>Maybe a demo will be here too</p>
           </div>
-          <div className={contentWrapper}>Project 2</div>
-          <div className={contentWrapper}>Project 3</div>
-          <div className={contentWrapper}>AI playlist generator</div>
+
+          <div className={contentWrapper}>
+            <p className={title}>Project 2</p>
+            <p>Here's information about project 1</p>
+            <p>Maybe a demo will be here too</p>
+          </div>
         </div>
       </div>
     </>
