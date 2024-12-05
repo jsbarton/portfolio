@@ -36,10 +36,8 @@ export default function Home() {
           Projects
         </div>
         <div className="flex h-5 w-5 my-5">
-          <div>
-            <Image alt="github-logo" src={GitHubLogo} />
-            <Image alt="linkedin-logo" src={LinkedInLogo} />
-          </div>
+          <Image alt="github-logo" src={GitHubLogo} />
+          <Image alt="linkedin-logo" src={LinkedInLogo} />
         </div>
       </div>
       <div className="flex justify-end">
