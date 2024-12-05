@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import ProfilePic from "./i/profile_pic.jpg";
+import ProfilePic from "./i/profile-pic.jpg";
+import GitHubLogo from "./i/github-mark-white.svg";
+import LinkedInLogo from "./i/linked-in-logo.png";
 import { MutableRefObject, useRef } from "react";
 
 export default function Home() {
@@ -23,7 +25,7 @@ export default function Home() {
       <div className="fixed flex flex-col h-screen items-center justify-center w-1/3">
         <div className="pb-3">Jordan Barton</div>
         <Image
-          alt="my face"
+          alt="my-face"
           className="max-w-[100px] max-h-[100px] rounded-full"
           src={ProfilePic}
         />
@@ -32,6 +34,12 @@ export default function Home() {
         </div>
         <div className="pt-2" onClick={() => handleScroll(projectsRef)}>
           Projects
+        </div>
+        <div className="flex h-5 w-5 my-5">
+          <div>
+            <Image alt="github-logo" src={GitHubLogo} />
+            <Image alt="linkedin-logo" src={LinkedInLogo} />
+          </div>
         </div>
       </div>
       <div className="flex justify-end">
