@@ -21,20 +21,27 @@ export default function Home() {
     }
   };
 
+  const introMessages: string[] = [
+    "Hi, I'm Jordan. I'm a Software Engineer,",
+    "Welcome to my portfolio.",
+  ];
+
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex flex-col h-screen items-center justify-center relative">
+        <div className="flex flex-col h-screen items-center justify-center w-full relative">
           {/** enter animation */}
-          <div className="flex">
-            {/* <span className="inline-block animate-typing pb-3 h-6 overflow-hidden bg-red-500">
-            Hi, my name is Jordan, and I'm a Software Engineer.
-          </span> */}
-            <span className="inline-block h-3 w-[2px] animate-blinkCaret bg-white ml-1" />
+          <div className="flex w-[300px]">
+            <span className="inline-block animate-typingWithBackspace pb-3 h-6 overflow-hidden bg-red-500 whitespace-nowrap w-0">
+              Hi, I'm Jordan. I'm a Software Engineer.
+            </span>
+            <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
           </div>
           <div className="flex">
-            <div className="pb-3">Welcome to my portfolio.</div>
-            <span className="inline-block h-3 w-[2px] animate-blinkCaret bg-white ml-1" />
+            <div className="inline-block animate-typing pb-3 h-6 overflow-hidden bg-red-500 whitespace-nowrap">
+              Welcome to my portfolio.
+            </div>
+            <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
           </div>
           <Image
             alt="my-face"

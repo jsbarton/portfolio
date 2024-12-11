@@ -16,13 +16,22 @@ export default {
       },
       // animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
       animation: {
-        typing: "typing 2s steps(10, end) infinite", // Typing effect
+        typingWithBackspace: "typingWithBackspace 5s steps(25, end) 1", // Typing effect
+        typing: "typing 5s steps(25, end) 1", // Typing effect
         blinkCaret: "blinkCaret 1s steps(1) infinite", // Cursor blink
       },
       keyframes: {
         typing: {
           "0%": { width: "0" },
+          "50%": { width: "50%" },
           "100%": { width: "100%" },
+        },
+        typingWithBackspace: {
+          "0%": { width: "0" },
+          "25%": { width: "50%" },
+          "50%": { width: "100%" },
+          "75%": { width: "50%" },
+          "100%": { width: "0" },
         },
         blinkCaret: {
           "0%, 100%": { backgroundColor: "transparent" },
