@@ -24,11 +24,18 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex flex-col h-screen items-center justify-center">
-          <div className="pb-3">
-            Hi! I'm Jordan, and I'm a Software Engineer.
+        <div className="flex flex-col h-screen items-center justify-center relative">
+          {/** enter animation */}
+          <div className="flex">
+            {/* <span className="inline-block animate-typing pb-3 h-6 overflow-hidden bg-red-500">
+            Hi, my name is Jordan, and I'm a Software Engineer.
+          </span> */}
+            <span className="inline-block h-3 w-[2px] animate-blinkCaret bg-white ml-1" />
           </div>
-          <div>Welcome to my portfolio.</div>
+          <div className="flex">
+            <div className="pb-3">Welcome to my portfolio.</div>
+            <span className="inline-block h-3 w-[2px] animate-blinkCaret bg-white ml-1" />
+          </div>
           <Image
             alt="my-face"
             className="max-w-[100px] max-h-[100px] rounded-full"
