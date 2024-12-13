@@ -16,7 +16,7 @@ export default {
       },
       // animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
       animation: {
-        typingWithBackspace: "typingWithBackspace 5s steps(25, end) 1", // Typing effect
+        typingWithBackspace: "typingWithBackspace 5s steps(25, end) infinite", // Typing effect
         typing: "typing 5s steps(25, end) 1", // Typing effect
         blinkCaret: "blinkCaret 1s steps(1) infinite", // Cursor blink
       },

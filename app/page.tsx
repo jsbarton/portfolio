@@ -3,14 +3,23 @@ import Image from "next/image";
 import ProfilePic from "./i/profile-pic.jpg";
 import GitHubLogo from "./i/github-mark-white.svg";
 import LinkedInLogo from "./i/linked-in-logo.png";
-import { MutableRefObject, useRef } from "react";
+import { MutableRefObject, useRef, useState } from "react";
 
 export default function Home() {
-  const contentWrapper = "w-50 h-screen my-10";
-  const title = "text-3xl pb-6";
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
+  const [welcomeText, setWelcomeText] = useState<string>(
+    "Hi, I'm Jordan. I'm a Software Engineer."
+  );
 
+  const [welcomeWidth, setWelcomeWidth] = useState<string>("500px");
+  const [iteration, setIteration] = useState<number>(0);
+  const contentWrapper = "w-50 h-screen my-10";
+  const title = "text-3xl pb-6";
+
+  const handleAnimationIteration = () => {
+    setIteration((iteration + 1) % animations.length);
+  };
   const handleScroll = (ref: MutableRefObject<any>) => {
     console.log("clicked");
     if (ref.current) {
@@ -21,26 +30,35 @@ export default function Home() {
     }
   };
 
-  const introMessages: string[] = [
-    "Hi, I'm Jordan. I'm a Software Engineer,",
+  const welcomeMessages = [
+    "Hi, I'm Jordan. I'm a Software Engineer.",
     "Welcome to my portfolio.",
   ];
+
+  const animations = ["animate-typingWithBackspace", "animate-typing"];
 
   return (
     <>
       <div className="flex flex-col">
         <div className="flex flex-col h-screen items-center justify-center w-full relative">
-          {/** enter animation */}
-          <div className="flex w-[300px]">
-            <span className="inline-block animate-typingWithBackspace pb-3 h-6 overflow-hidden bg-red-500 whitespace-nowrap w-0">
-              Hi, I'm Jordan. I'm a Software Engineer.
+          <div className="flex w-[500px]">
+            <span
+              className={`inline-block animate-typingWithBackspace mb-5 h-7 overflow-hidden text-2xl whitespace-nowrap w-0 max-w-[${welcomeWidth}]`}
+              onAnimationEnd={() =>
+                setWelcomeText(welcomeMessages[welcomeMessages.length - 1])
+              }
+              onAnimationIteration={() =>
+                setWelcomeText((prevText) => {
+                  handleAnimationIteration();
+                  setWelcomeWidth("300px");
+                  const currentIndex = welcomeMessages.indexOf(prevText);
+                  const nextIndex = (currentIndex + 1) % welcomeMessages.length;
+                  return welcomeMessages[nextIndex];
+                })
+              }
+            >
+              {welcomeText}
             </span>
-            <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
-          </div>
-          <div className="flex">
-            <div className="inline-block animate-typing pb-3 h-6 overflow-hidden bg-red-500 whitespace-nowrap">
-              Welcome to my portfolio.
-            </div>
             <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
           </div>
           <Image
