@@ -15,7 +15,7 @@ export default function Home() {
   const [welcomeWidth, setWelcomeWidth] = useState<string>("500px");
   const [iteration, setIteration] = useState<number>(0);
   const contentWrapper = "w-50 h-screen my-10";
-  const title = "text-3xl pb-6";
+  const title = "text-3xl pb-6 mt-8";
 
   const handleAnimationIteration = () => {
     setIteration((iteration + 1) % animations.length);
