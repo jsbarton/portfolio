@@ -3,25 +3,19 @@ import Image from "next/image";
 import ProfilePic from "./i/profile-pic.jpg";
 import GitHubLogo from "./i/github-mark-white.svg";
 import LinkedInLogo from "./i/linked-in-logo.png";
-import { MutableRefObject, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
-  const [welcomeText, setWelcomeText] = useState<string>(
+  const [currentWelcomeText, setCurrentWelcomeText] = useState<string>(
     "Hi, I'm Jordan. I'm a Software Engineer."
   );
 
-  const [welcomeWidth, setWelcomeWidth] = useState<string>("500px");
-  const [iteration, setIteration] = useState<number>(0);
   const contentWrapper = "w-50 h-screen my-10";
   const title = "text-3xl pb-6 mt-8";
 
-  const handleAnimationIteration = () => {
-    setIteration((iteration + 1) % animations.length);
-  };
   const handleScroll = (ref: MutableRefObject<any>) => {
-    console.log("clicked");
     if (ref.current) {
       ref.current.scrollIntoView({
         behavior: "smooth",
@@ -30,12 +24,19 @@ export default function Home() {
     }
   };
 
-  const welcomeMessages = [
-    "Hi, I'm Jordan. I'm a Software Engineer.",
-    "Welcome to my portfolio.",
-  ];
+  const finalWelcomeText = "Hi, I'm Jordan. I'm a Software Engineer.";
 
-  const animations = ["animate-typingWithBackspace", "animate-typing"];
+  let builder = "";
+  let i = 0;
+  useEffect(() => {
+    setInterval(() => {
+      if (i < finalWelcomeText.length) {
+        builder+= finalWelcomeText.charAt(i);
+        setCurrentWelcomeText(builder);
+        i++;
+      }
+    }, 100);
+  }, []);
 
   return (
     <>
@@ -43,21 +44,8 @@ export default function Home() {
         <div className="flex flex-col h-screen items-center justify-center w-full relative">
           <div className="flex w-[500px]">
             <span
-              className={`inline-block animate-typingWithBackspace mb-5 h-7 overflow-hidden text-2xl whitespace-nowrap w-0 max-w-[${welcomeWidth}]`}
-              onAnimationEnd={() =>
-                setWelcomeText(welcomeMessages[welcomeMessages.length - 1])
-              }
-              onAnimationIteration={() =>
-                setWelcomeText((prevText) => {
-                  handleAnimationIteration();
-                  setWelcomeWidth("300px");
-                  const currentIndex = welcomeMessages.indexOf(prevText);
-                  const nextIndex = (currentIndex + 1) % welcomeMessages.length;
-                  return welcomeMessages[nextIndex];
-                })
-              }
-            >
-              {welcomeText}
+              className={`inline-block mb-5 h-7 overflow-hidden text-2xl whitespace-nowrap max-w-500px`}>
+              {currentWelcomeText}
             </span>
             <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
           </div>
