@@ -8,13 +8,8 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 export default function Home() {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
-  const [currentWelcomeText, setCurrentWelcomeText] = useState<string>(
-    "Hi, I'm Jordan. I'm a Software Engineer."
-  );
-
-  const contentWrapper = "w-50 h-screen my-10";
-  const title = "text-3xl pb-6 mt-8";
-
+  const [currentWelcomeText, setCurrentWelcomeText] = useState<string>("");
+ 
   const handleScroll = (ref: MutableRefObject<any>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -23,11 +18,10 @@ export default function Home() {
       });
     }
   };
-
-  const finalWelcomeText = "Hi, I'm Jordan. I'm a Software Engineer.";
-
+  
   let builder = "";
   let i = 0;
+  const finalWelcomeText = "Hi, I'm Jordan. I'm a Software Engineer.";
   useEffect(() => {
     setInterval(() => {
       if (i < finalWelcomeText.length) {
@@ -37,17 +31,21 @@ export default function Home() {
       }
     }, 100);
   }, []);
+  
+  // move these to another file
+  const contentWrapper = "w-50 h-screen my-10";
+  const title = "text-3xl pb-6 mt-8";
 
   return (
     <>
       <div className="flex flex-col">
         <div className="flex flex-col h-screen items-center justify-center w-full relative">
-          <div className="flex w-[500px]">
+          <div className="flex">
             <span
-              className={`inline-block mb-5 h-7 overflow-hidden text-2xl whitespace-nowrap max-w-500px`}>
+              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
               {currentWelcomeText}
             </span>
-            <span className="inline-block h-5 w-[1px] animate-blinkCaret bg-white ml-1" />
+            <span className="inline-block h-9 w-[2px] animate-blinkCaret bg-white ml-2" />
           </div>
           <Image
             alt="my-face"
