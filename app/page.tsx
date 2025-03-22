@@ -10,15 +10,14 @@ export default function Home() {
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
   const [currentWelcomeText, setCurrentWelcomeText] = useState<string>("");
-  const [isFirstLineComplete, setIsFirstLineComplete] = useState<boolean>(false);
-  const [isSecondLineComplete, setIsSecondLineComplete] = useState<boolean>(false);
-  // const [isFirstLineComplete, setIsFirstLineComplete] = useState<boolean>(false);
-  const [secondLineWelcomeText, setSecondLineWelcomeText] = useState<string>("");
+  const [isFirstLineComplete, setIsFirstLineComplete] =
+    useState<boolean>(false);
+  const [isSecondLineComplete, setIsSecondLineComplete] =
+    useState<boolean>(false);
+  const [secondLineWelcomeText, setSecondLineWelcomeText] =
+    useState<string>("");
   const [thirdLineWelcomeText, setThirdLineWelcomeText] = useState<string>("");
-  // Hi, I'm Jordan.
-  // Current Position: Fullstack Engineer II @ Quizlet
-  // Location: New York, NY
- 
+
   const handleScroll = (ref: MutableRefObject<any>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
@@ -27,7 +26,7 @@ export default function Home() {
       });
     }
   };
-  
+
   // TODO: Break out into its own component
   let firstLineBuilder = "";
   let secondLineBuilder = "";
@@ -35,67 +34,88 @@ export default function Home() {
   let firstLineCounter = 0;
   let secondLineCounter = 0;
   let thirdLineCounter = 0;
-  const firstLineWelcomeText = "Hi, I'm Jordan.";
-  const secondLineFinalText = "Current Position: Fullstack Engineer II @ Quizlet";
+  const firstLineWelcomeText = "Name: Jordan Barton";
+  const secondLineFinalText =
+    "Current Position: Fullstack Engineer II @ Quizlet";
   const thirdLineFinalText = "Location: New York, NY";
   useEffect(() => {
     setInterval(() => {
-      if (firstLineCounter < firstLineWelcomeText.length && isFirstLineComplete === false) {
-        firstLineBuilder+= firstLineWelcomeText.charAt(firstLineCounter);
+      if (
+        firstLineCounter < firstLineWelcomeText.length &&
+        isFirstLineComplete === false
+      ) {
+        firstLineBuilder += firstLineWelcomeText.charAt(firstLineCounter);
         setCurrentWelcomeText(firstLineBuilder);
         firstLineCounter++;
       }
-      if (firstLineCounter === firstLineWelcomeText.length && secondLineCounter < secondLineFinalText.length && isSecondLineComplete === false) {
+      if (
+        firstLineCounter === firstLineWelcomeText.length &&
+        secondLineCounter < secondLineFinalText.length &&
+        isSecondLineComplete === false
+      ) {
         setIsFirstLineComplete(true);
-        secondLineBuilder+= secondLineFinalText.charAt(secondLineCounter++);
+        secondLineBuilder += secondLineFinalText.charAt(secondLineCounter++);
         setSecondLineWelcomeText(secondLineBuilder);
       }
-      
-      if (secondLineCounter === secondLineFinalText.length && thirdLineCounter < thirdLineFinalText.length) {
+
+      if (
+        secondLineCounter === secondLineFinalText.length &&
+        thirdLineCounter < thirdLineFinalText.length
+      ) {
         setIsSecondLineComplete(true);
-        thirdLineBuilder+= thirdLineFinalText.charAt(thirdLineCounter++);
+        thirdLineBuilder += thirdLineFinalText.charAt(thirdLineCounter++);
         setThirdLineWelcomeText(thirdLineBuilder);
       }
-
     }, 100);
   }, []);
   // END TODO
-  
+
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex flex-col h-screen items-center justify-center w-full relative">
+        <div className="flex h-screen items-center justify-center w-full relative">
           <div className="flex flex-col">
-            <span
-              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
-              {currentWelcomeText}
-            </span>
-            <span className="inline-block h-9 w-[2px] animate-blinkCaret bg-white ml-2" />
-            <span
-              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
-              {secondLineWelcomeText}
-            </span>
-            <span className="inline-block h-9 w-[2px] animate-blinkCaretv2 bg-white ml-2" />
-            <span
-              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
-              {thirdLineWelcomeText}
-            </span>
-          <span className="inline-block h-9 w-[2px] animate-blinkCaretv3 bg-white ml-2" />
+            <Image
+              alt="my-face"
+              className="max-w-[100px] max-h-[100px] rounded-full"
+              src={ProfilePic}
+            />
+            <div className="pt-2" onClick={() => handleScroll(projectsRef)}>
+              Projects
+            </div>
+            <div className="pt-4" onClick={() => handleScroll(aboutRef)}>
+              About
+            </div>
+            <div className="flex h-5 w-5 my-5">
+              <Image alt="github-logo" src={GitHubLogo} />
+              <Image alt="linkedin-logo" src={LinkedInLogo} />
+            </div>
           </div>
-          <Image
-            alt="my-face"
-            className="max-w-[100px] max-h-[100px] rounded-full"
-            src={ProfilePic}
-          />
-          <div className="pt-2" onClick={() => handleScroll(projectsRef)}>
-            Projects
-          </div>
-          <div className="pt-4" onClick={() => handleScroll(aboutRef)}>
-            About
-          </div>
-          <div className="flex h-5 w-5 my-5">
-            <Image alt="github-logo" src={GitHubLogo} />
-            <Image alt="linkedin-logo" src={LinkedInLogo} />
+          <div className="flex flex-col">
+            <div>
+              <span
+                className={`inline-block overflow-hidden text-2xl whitespace-nowrap`}
+              >
+                {currentWelcomeText}
+              </span>
+              <span className="inline-block h-6 mb-[2px] w-[2px] animate-blinkCaret bg-white ml-2" />
+            </div>
+            <div>
+              <span
+                className={`inline-block overflow-hidden text-2xl whitespace-nowrap`}
+              >
+                {secondLineWelcomeText}
+              </span>
+              <span className="inline-block h-6 mb-[2px] w-[2px] animate-blinkCaretv2 bg-white ml-2" />
+            </div>
+            <div>
+              <span
+                className={`inline-block overflow-hidden text-2xl whitespace-nowrap`}
+              >
+                {thirdLineWelcomeText}
+              </span>
+              <span className="inline-block h-6 mb-[2px] w-[2px] animate-blinkCaretv3 bg-white ml-2" />
+            </div>
           </div>
         </div>
         <div className="flex">
@@ -114,22 +134,23 @@ export default function Home() {
           </div>
         </div>
         <div className={contentWrapper} ref={aboutRef}>
-              <p className={title}>About</p>
-              {/* Move messages to another file */} 
-              <p>
-                I'm Jordan, I grew up in Prince George's County, Maryland and
-                attended the University of Maryland, College Park where I received
-                my Bachelor's in Computer Science.
-              </p>
-              <p>
-                When I'm not coding, I enjoy sewing, trying new recipes,
-                shopping, and traveling.
-              </p>
-              <p>
-                I've compiled some of my work here. If you'd like to collaborate on 
-                a project, chat about my work, or just say hi, please feel free to reach out!
-              </p>
-            </div>
+          <p className={title}>About</p>
+          {/* Move messages to another file */}
+          <p>
+            I'm Jordan, I grew up in Prince George's County, Maryland and
+            attended the University of Maryland, College Park where I received
+            my Bachelor's in Computer Science.
+          </p>
+          <p>
+            When I'm not coding, I enjoy sewing, trying new recipes, shopping,
+            and traveling.
+          </p>
+          <p>
+            I've compiled some of my work here. If you'd like to collaborate on
+            a project, chat about my work, or just say hi, please feel free to
+            reach out!
+          </p>
+        </div>
       </div>
     </>
   );
