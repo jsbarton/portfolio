@@ -10,6 +10,11 @@ export default function Home() {
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
   const [currentWelcomeText, setCurrentWelcomeText] = useState<string>("");
+  const [isFirstLineComplete, setIsFirstLineComplete] = useState<boolean>(false);
+  const [isSecondLineComplete, setIsSecondLineComplete] = useState<boolean>(false);
+  // const [isFirstLineComplete, setIsFirstLineComplete] = useState<boolean>(false);
+  const [secondLineWelcomeText, setSecondLineWelcomeText] = useState<string>("");
+  const [thirdLineWelcomeText, setThirdLineWelcomeText] = useState<string>("");
   // Hi, I'm Jordan.
   // Current Position: Fullstack Engineer II @ Quizlet
   // Location: New York, NY
@@ -27,17 +32,31 @@ export default function Home() {
   let firstLineBuilder = "";
   let secondLineBuilder = "";
   let thirdLineBuilder = "";
-  let i = 0;
+  let firstLineCounter = 0;
+  let secondLineCounter = 0;
+  let thirdLineCounter = 0;
   const firstLineWelcomeText = "Hi, I'm Jordan.";
-  const secondLineWelcomeText = "Current Position: Fullstack Engineer II @ Quizlet";
-  const thirdLineWelcomeText = "Location: New York, NY";
+  const secondLineFinalText = "Current Position: Fullstack Engineer II @ Quizlet";
+  const thirdLineFinalText = "Location: New York, NY";
   useEffect(() => {
     setInterval(() => {
-      if (i < firstLineWelcomeText.length) {
-        firstLineBuilder+= firstLineWelcomeText.charAt(i);
+      if (firstLineCounter < firstLineWelcomeText.length && isFirstLineComplete === false) {
+        firstLineBuilder+= firstLineWelcomeText.charAt(firstLineCounter);
         setCurrentWelcomeText(firstLineBuilder);
-        i++;
+        firstLineCounter++;
       }
+      if (firstLineCounter === firstLineWelcomeText.length && secondLineCounter < secondLineFinalText.length && isSecondLineComplete === false) {
+        setIsFirstLineComplete(true);
+        secondLineBuilder+= secondLineFinalText.charAt(secondLineCounter++);
+        setSecondLineWelcomeText(secondLineBuilder);
+      }
+      
+      if (secondLineCounter === secondLineFinalText.length && thirdLineCounter < thirdLineFinalText.length) {
+        setIsSecondLineComplete(true);
+        thirdLineBuilder+= thirdLineFinalText.charAt(thirdLineCounter++);
+        setThirdLineWelcomeText(thirdLineBuilder);
+      }
+
     }, 100);
   }, []);
   // END TODO
@@ -46,12 +65,22 @@ export default function Home() {
     <>
       <div className="flex flex-col">
         <div className="flex flex-col h-screen items-center justify-center w-full relative">
-          <div className="flex">
+          <div className="flex flex-col">
             <span
               className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
               {currentWelcomeText}
             </span>
             <span className="inline-block h-9 w-[2px] animate-blinkCaret bg-white ml-2" />
+            <span
+              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
+              {secondLineWelcomeText}
+            </span>
+            <span className="inline-block h-9 w-[2px] animate-blinkCaretv2 bg-white ml-2" />
+            <span
+              className={`inline-block mb-5 overflow-hidden text-4xl whitespace-nowrap`}>
+              {thirdLineWelcomeText}
+            </span>
+          <span className="inline-block h-9 w-[2px] animate-blinkCaretv3 bg-white ml-2" />
           </div>
           <Image
             alt="my-face"

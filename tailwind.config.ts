@@ -16,7 +16,9 @@ export default {
       },
       // animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
       animation: {
-        blinkCaret: "blinkCaret 1s steps(1) infinite", // Cursor blink
+        blinkCaret: "blinkCaret 1s steps(1) 2", // Cursor blink
+        blinkCaretv2: "blinkCaret 1s steps(1) 5 1.5s", // Cursor blink
+        blinkCaretv3: "blinkCaret 1s steps(1) infinite 4.9s", // Cursor blink
       },
       keyframes: {
         typing: {
