@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const kanitRegular = localFont({
-  src: "./fonts/KanitRegular.ttf",
+  src: "./fonts/Inconsolata-Medium.ttf",
   variable: "--font-kanit-regular",
   weight: "100 900",
 });

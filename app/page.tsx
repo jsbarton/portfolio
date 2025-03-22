@@ -8,6 +8,7 @@ import {
   blinkCaretAnimation,
   contentWrapper,
   externalLinksWrapper,
+  gridBlock,
   introWrapper,
   pageWrapper,
   profilePicture,
@@ -86,7 +87,7 @@ export default function Home() {
     <>
       <div className={pageWrapper}>
         <div className={introWrapper}>
-          <div className={sectionWrapper}>
+          <div className={`${sectionWrapper} items-center mt-[125px]`}>
             <Image alt="my-face" className={profilePicture} src={ProfilePic} />
             <div
               className={refsWrapper}
@@ -103,7 +104,7 @@ export default function Home() {
               <Image alt="linkedin-logo" src={LinkedInLogo} />
             </div>
           </div>
-          <div className={sectionWrapper}>
+          <div className={`${sectionWrapper} min-w-[50%] ml-[50px]`}>
             <div>
               <span className={typingAnimationText}>{currentWelcomeText}</span>
               <span className={blinkCaretAnimation("LineOne")} />
@@ -122,13 +123,22 @@ export default function Home() {
             </div>
           </div>
         </div>
-          <div className={contentWrapper} ref={projectsRef}>
-            <p className={title}>Project 1</p>
+        {/** TODO: Make Projects its own component */}
+        {/** Section inspo: https://fonts.google.com/download/next-steps - fill empty space with "coming soon!" */}
+        <div className={contentWrapper} ref={projectsRef}>
+          <p className={title}>Projects</p>
+          {/** Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+            <div className={gridBlock}>Item 1</div>
+            <div className={gridBlock}>Item 2</div>
+            <div className={gridBlock}>Item 3</div>
+            <div className={gridBlock}>Item 4</div>
+            <div className={gridBlock}>Item 5</div>
+            <div className={gridBlock}>Item 6</div>
           </div>
-          <div className={contentWrapper}>
-            <p className={title}>Project 2</p>
-          </div>
+        </div>
         <div className={contentWrapper} ref={aboutRef}>
+          {/** TODO: Make About its own component */}
           <p className={title}>About</p>
         </div>
       </div>
