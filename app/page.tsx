@@ -4,7 +4,17 @@ import ProfilePic from "./i/profile-pic.jpg";
 import GitHubLogo from "./i/github-mark-white.svg";
 import LinkedInLogo from "./i/linked-in-logo.png";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
-import { contentWrapper, title } from "./styles/styles";
+import {
+  contentWrapper,
+  externalLinksWrapper,
+  introWrapper,
+  pageWrapper,
+  profilePicture,
+  refsWrapper,
+  sectionWrapper,
+  title,
+} from "./styles";
+import { about, projects } from "./messages";
 
 export default function Home() {
   const projectsRef = useRef(null);
@@ -27,7 +37,7 @@ export default function Home() {
     }
   };
 
-  // TODO: Break out into its own component
+  // TODO: Refactor
   let firstLineBuilder = "";
   let secondLineBuilder = "";
   let thirdLineBuilder = "";
@@ -72,26 +82,26 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="flex h-screen items-center justify-center w-full relative">
-          <div className="flex flex-col">
-            <Image
-              alt="my-face"
-              className="max-w-[100px] max-h-[100px] rounded-full"
-              src={ProfilePic}
-            />
-            <div className="pt-2" onClick={() => handleScroll(projectsRef)}>
-              Projects
+      <div className={pageWrapper}>
+        <div className={introWrapper}>
+          <div className={sectionWrapper}>
+            <Image alt="my-face" className={profilePicture} src={ProfilePic} />
+            <div
+              className={refsWrapper}
+              onClick={() => handleScroll(projectsRef)}
+            >
+              {projects}
             </div>
-            <div className="pt-4" onClick={() => handleScroll(aboutRef)}>
-              About
+            <div className={refsWrapper} onClick={() => handleScroll(aboutRef)}>
+              {about}
             </div>
-            <div className="flex h-5 w-5 my-5">
+            {/** These aren't visible because they're white/transparent */}
+            <div className={externalLinksWrapper}>
               <Image alt="github-logo" src={GitHubLogo} />
               <Image alt="linkedin-logo" src={LinkedInLogo} />
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className={sectionWrapper}>
             <div>
               <span
                 className={`inline-block overflow-hidden text-2xl whitespace-nowrap`}
