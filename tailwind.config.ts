@@ -16,9 +16,9 @@ export default {
       },
       // animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
       animation: {
-        blinkCaret: "blinkCaret 1s steps(1) 2", // Cursor blink
-        blinkCaretv2: "blinkCaret 1s steps(1) 5 2s", // Cursor blink
-        blinkCaretv3: "blinkCaret 1s steps(1) infinite 7s", // Cursor blink
+        blinkCaretLineOne: "blinkCaret 1s steps(1) 2", // Cursor blink
+        blinkCaretLineTwo: "blinkCaret 1s steps(1) 5 2s", // Cursor blink
+        blinkCaretLineThree: "blinkCaret 1s steps(1) infinite 7s", // Cursor blink
       },
       keyframes: {
         typing: {
@@ -30,8 +30,9 @@ export default {
           "0%, 100%": { backgroundColor: "transparent" },
           "50%": { backgroundColor: "black" }, // this is going to be a problem in light/dark mode
         },
-      },
+      }
     },
   },
   plugins: [],
+  safelist: [{ pattern: /animate-blinkCaret.*/ }],
 } satisfies Config;

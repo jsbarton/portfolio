@@ -1,11 +1,11 @@
 /**
- * Messages for Projects section
+ * Messages for Projects section.
  */
 
 export const projects: string = 'Projects';
 
 /**
- * Messages for About section
+ * Messages for About section.
  */
 export const about: string = 'About';
 export const hometown: string = "Prince George's County, Maryland";
