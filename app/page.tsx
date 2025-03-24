@@ -18,10 +18,12 @@ import {
   typingAnimationText,
 } from "./styles";
 import { about, projects } from "./messages";
+import OpenTabIcon from "./OpenTabIcon";
 
 export default function Home() {
-  const projectsRef = useRef(null);
   const aboutRef = useRef(null);
+  const interestsRef = useRef(null);
+  const projectsRef = useRef(null);
   const [currentWelcomeText, setCurrentWelcomeText] = useState<string>("");
   const [isFirstLineComplete, setIsFirstLineComplete] =
     useState<boolean>(false);
@@ -98,13 +100,19 @@ export default function Home() {
             <div className={refsWrapper} onClick={() => handleScroll(aboutRef)}>
               {about}
             </div>
+            <div
+              className={refsWrapper}
+              onClick={() => handleScroll(interestsRef)}
+            >
+              Interests
+            </div>
             {/** These aren't visible because they're white/transparent */}
             <div className={externalLinksWrapper}>
               <Image alt="github-logo" src={GitHubLogo} />
               <Image alt="linkedin-logo" src={LinkedInLogo} />
             </div>
           </div>
-          <div className={`${sectionWrapper} min-w-[50%] ml-[50px]`}>
+          <div className={`${sectionWrapper} min-w-[55%] ml-[50px]`}>
             <div>
               <span className={typingAnimationText}>{currentWelcomeText}</span>
               <span className={blinkCaretAnimation("LineOne")} />
@@ -124,22 +132,66 @@ export default function Home() {
           </div>
         </div>
         {/** TODO: Make Projects its own component */}
-        {/** Section inspo: https://fonts.google.com/download/next-steps - fill empty space with "coming soon!" */}
         <div className={contentWrapper} ref={projectsRef}>
           <p className={title}>Projects</p>
           {/** Responsive Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
-            <div className={gridBlock}>Item 1</div>
-            <div className={gridBlock}>Item 2</div>
-            <div className={gridBlock}>Item 3</div>
-            <div className={gridBlock}>Item 4</div>
-            <div className={gridBlock}>Item 5</div>
-            <div className={gridBlock}>Item 6</div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
+            <div className={gridBlock}>
+              <OpenTabIcon />
+            </div>
           </div>
         </div>
         <div className={contentWrapper} ref={aboutRef}>
           {/** TODO: Make About its own component */}
-          <p className={title}>About</p>
+          <div className={title}>About</div>
+          <div className="grid grid-cols-2 ml-[16px]">
+            <div className="">
+              Education
+              <div>Bachelor of Science Computer Science, Statistics Minor</div>
+              {/** TODO: Make bold font work */}
+              <div className="font-bold">
+                University of Maryland, College Park
+              </div>
+            </div>
+            <div className="">
+              Experience
+              <div>
+                Fullstack Engineer II | Activation & Retention | Quizlet, Inc.
+              </div>
+              <div>
+                Fullstack Engineer I | SEO, Search & Recommendations | Quizlet,
+                Inc.
+              </div>
+              <div>Fullstack Engineer Intern | SEO | Quizlet, Inc.</div>
+              <div>CodeU Participant | Google </div>
+            </div>
+          </div>
+        </div>
+        <div className={contentWrapper} ref={interestsRef}>
+          {/** TODO: Make Interests its own component */}
+          <div className={title}>Interests</div>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div className="bg-yellow-200 p-4">Food</div>
+            <div className="bg-yellow-200 p-4">Fashion</div>
+            <div className="bg-yellow-200 p-4">Travel</div>
+            <div className="bg-yellow-200 p-4">Health, Wellness, & Community</div>
+            <div className="bg-yellow-200 p-4">Animals</div>
+          </div>
         </div>
       </div>
     </>
