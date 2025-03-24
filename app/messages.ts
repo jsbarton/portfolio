@@ -2,14 +2,32 @@
  * Messages for Projects section.
  */
 
-export const projects: string = 'Projects';
+export const projectsTitle: string = "Projects";
 
 /**
  * Messages for About section.
  */
-export const about: string = 'About';
-export const hometown: string = "Prince George's County, Maryland";
-export const education: string = 'Bachelor of Science in Computer Science, Minor in Statistics from University of Maryland, College Park';
-export const restaurantsInterest: string = 'Trying new restaurants';
-export const travelInterest: string = 'Travel';
-export const fashionInterest: string = 'Fashion';
+export const about: string = "About";
+export const degree: string =
+  "Bachelor of Science Computer Science, Statistics Minor";
+export const education: string = "Education";
+export const experience: string = "Experience";
+export const experiences: string[] = [
+  "Fullstack Engineer II | Activation & Retention | Quizlet, Inc.",
+  "Fullstack Engineer I | SEO, Search & Recommendations | Quizlet, Inc.",
+  "Fullstack Engineer Intern | SEO | Quizlet, Inc.",
+  "CodeU Participant | Google",
+];
+export const school: string = "University of Maryland, College Park";
+
+/**
+ * Messages for Interests section.
+ */
+
+export const interests: string[] = [
+  "Food",
+  "Fashion",
+  "Travel",
+  "Health, Wellness, & Community",
+  "Animals",
+];

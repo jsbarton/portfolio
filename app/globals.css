@@ -17,5 +17,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-kanit-regular);
+  font-family: var(--font-inconsolata-medium);
 }

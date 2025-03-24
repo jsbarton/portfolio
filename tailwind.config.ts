@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,11 +13,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      // animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
       animation: {
-        blinkCaretLineOne: "blinkCaret 1s steps(1) 2", // Cursor blink
-        blinkCaretLineTwo: "blinkCaret 1s steps(1) 5 2s", // Cursor blink
-        blinkCaretLineThree: "blinkCaret 1s steps(1) infinite 7s", // Cursor blink
+        blinkCaretLineOne: "blinkCaret 1s steps(1) 2",
+        blinkCaretLineTwo: "blinkCaret 1s steps(1) 5 2s", 
+        blinkCaretLineThree: "blinkCaret 1s steps(1) infinite 7s", 
       },
       keyframes: {
         typing: {
