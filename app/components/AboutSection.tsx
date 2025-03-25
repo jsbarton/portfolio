@@ -1,4 +1,4 @@
-import { LegacyRef } from "react";
+import { MutableRefObject } from "react";
 import { contentWrapper, title } from "../styles";
 import {
   about,
@@ -10,7 +10,7 @@ import {
 } from "../messages";
 
 type Props = {
-  ref: LegacyRef<HTMLDivElement> | undefined;
+  ref: MutableRefObject<any>;
 };
 
 const AboutSection = ({ ref }: Props) => {

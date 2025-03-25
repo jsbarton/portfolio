@@ -1,10 +1,10 @@
-import { LegacyRef } from "react";
+import { MutableRefObject } from "react";
 import { contentWrapper, gridBlock, title } from "../styles";
 import OpenTabIcon from "./OpenTabIcon";
 import { Project } from "../types";
 
 type Props = {
-  ref: LegacyRef<HTMLDivElement> | undefined;
+  ref: MutableRefObject<any>;
 };
 
 const projects: Project[] = [
