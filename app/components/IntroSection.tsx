@@ -12,7 +12,7 @@ import ProfilePic from "../i/profile-pic.jpg";
 import GitHubLogo from "../i/github-mark.svg";
 import LinkedInLogo from "../i/linked-in-logo.png";
 import { MutableRefObject, useEffect, useState } from "react";
-import { about, projectsTitle, skillsTitle } from "../messages";
+import { about, projectsTitle, skillsTitle } from "../utils";
 
 type Props = {
   aboutRef: MutableRefObject<any>;

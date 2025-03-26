@@ -7,7 +7,7 @@ import {
   experience,
   experiences,
   school,
-} from "../messages";
+} from "../utils";
 
 type Props = {
   ref: MutableRefObject<any>;
