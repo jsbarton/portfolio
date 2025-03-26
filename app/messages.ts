@@ -24,11 +24,7 @@ export const school: string = "University of Maryland, College Park";
  * Messages for Interests section.
  */
 
-export const interestsTitle: string = 'Interests';
-export const interests: string[] = [
-  "Food",
-  "Fashion",
-  "Travel",
-  "Health, Wellness, & Community",
-  "Animals",
-];
+export const skillsTitle: string = 'Skills';
+
+export const fashionInterestDescription: string = '';
+

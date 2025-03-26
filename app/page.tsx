@@ -5,21 +5,21 @@ import {
 } from "./styles";
 import ProjectsSection from "./components/ProjectsSection";
 import AboutSection from "./components/AboutSection";
-import InterestsSection from "./components/InterestsSection";
+import SkillsSection from "./components/SkillsSection";
 import IntroSection from "./components/IntroSection";
 
 export default function Home() {
   const aboutRef = useRef(null);
-  const interestsRef = useRef(null);
   const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
   
   return (
     <>
       <div className={pageWrapper}>
-        <IntroSection aboutRef={aboutRef} interestsRef={interestsRef} projectsRef={projectsRef}/>
+        <IntroSection aboutRef={aboutRef} interestsRef={skillsRef} projectsRef={projectsRef}/>
         <ProjectsSection ref={projectsRef} />
         <AboutSection ref={aboutRef} />
-        <InterestsSection ref={interestsRef} />
+        <SkillsSection ref={skillsRef} />
       </div>
     </>
   );

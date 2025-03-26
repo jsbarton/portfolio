@@ -23,3 +23,7 @@ export const blinkCaretAnimation = (lineVersion: string) => `inline-block h-5 mb
 export const contentWrapper = 'h-screen my-10 w-50';
 export const title = 'mt-8 ml-[16px] pb-6 text-3xl';
 export const gridBlock = 'bg-gray-100 hover:bg-gray-300 h-[200px] p-4 relative group rounded transition duration-300 ease-in';
+export const skillImageWrapper = 'w-[100px] h-[100px]';
+export const interestWrapper = 'flex flex-col items-center';
+export const interestTitleAndDescription = 'flex flex-col'
+export const interestTitle = 'text-2xl'

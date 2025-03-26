@@ -12,7 +12,7 @@ import ProfilePic from "../i/profile-pic.jpg";
 import GitHubLogo from "../i/github-mark.svg";
 import LinkedInLogo from "../i/linked-in-logo.png";
 import { MutableRefObject, useEffect, useState } from "react";
-import { about, interestsTitle, projectsTitle } from "../messages";
+import { about, projectsTitle, skillsTitle } from "../messages";
 
 type Props = {
   aboutRef: MutableRefObject<any>;
@@ -76,7 +76,7 @@ const IntroSection = ({ aboutRef, interestsRef, projectsRef }: Props) => {
           {about}
         </div>
         <div className={refsWrapper} onClick={() => handleScroll(interestsRef)}>
-          {interestsTitle}
+          {skillsTitle}
         </div>
         <div className={externalLinksWrapper}>
           <Image
