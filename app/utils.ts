@@ -1,15 +1,15 @@
-import PHPIcon from "../i/php.svg";
-import ReactIcon from "../i/react.svg";
-import CSSIcon from "../i/css.svg";
-import SQLIcon from "../i/sql.svg";
-import TypescriptIcon from "../i/ts.png";
-import PythonIcon from "../i/python.svg";
-import KotlinIcon from "../i/kotlin.svg";
-import ElasticSearchIcon from "../i/elasticsearch.svg";
-import GitIcon from "../i/git.svg";
-import TailwindIcon from "../i/tailwind.svg";
-import NextIcon from "../i/nextjs.svg";
-import JavaIcon from "../i/java.svg";
+import PHPIcon from "./i/php.svg";
+import ReactIcon from "./i/react.svg";
+import CSSIcon from "./i/css.svg";
+import SQLIcon from "./i/sql.svg";
+import TypescriptIcon from "./i/ts.png";
+import PythonIcon from "./i/python.svg";
+import KotlinIcon from "./i/kotlin.svg";
+import ElasticSearchIcon from "./i/elasticsearch.svg";
+import GitIcon from "./i/git.svg";
+import TailwindIcon from "./i/tailwind.svg";
+import NextIcon from "./i/nextjs.svg";
+import JavaIcon from "./i/java.svg";
 import { Skill } from "./types";
 /**
  * Messages for Projects section.
