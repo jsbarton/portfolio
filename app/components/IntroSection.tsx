@@ -3,7 +3,6 @@ import {
   externalLinksWrapper,
   introWrapper,
   profilePicture,
-  refsWrapper,
   sectionWrapper,
   typingAnimationText,
 } from "../styles";
@@ -11,27 +10,13 @@ import Image from "next/image";
 import ProfilePic from "../i/profile-pic.jpg";
 import GitHubLogo from "../i/github-mark.svg";
 import LinkedInLogo from "../i/linked-in-logo.png";
-import { MutableRefObject, useEffect, useState } from "react";
-import { about, projectsTitle, skillsTitle } from "../utils";
+import { useEffect, useState } from "react";
 
-type Props = {
-  aboutRef: MutableRefObject<any>;
-  interestsRef: MutableRefObject<any>;
-  projectsRef: MutableRefObject<any>;
-};
-const IntroSection = ({ aboutRef, interestsRef, projectsRef }: Props) => {
+const IntroSection = () => {
   const [currentWelcomeText, setCurrentWelcomeText] = useState<string>("");
   const [secondLineWelcomeText, setSecondLineWelcomeText] =
     useState<string>("");
   const [thirdLineWelcomeText, setThirdLineWelcomeText] = useState<string>("");
-  const handleScroll = (ref: MutableRefObject<any>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   useEffect(() => {
     const lines = [
@@ -69,15 +54,6 @@ const IntroSection = ({ aboutRef, interestsRef, projectsRef }: Props) => {
     <div className={introWrapper}>
       <div className={`${sectionWrapper} items-center mt-[125px]`}>
         <Image alt="my-face" className={profilePicture} src={ProfilePic} />
-        <div className={refsWrapper} onClick={() => handleScroll(projectsRef)}>
-          {projectsTitle}
-        </div>
-        <div className={refsWrapper} onClick={() => handleScroll(aboutRef)}>
-          {about}
-        </div>
-        <div className={refsWrapper} onClick={() => handleScroll(interestsRef)}>
-          {skillsTitle}
-        </div>
         <div className={externalLinksWrapper}>
           <Image
             className="max-w-[100%] mr-2"

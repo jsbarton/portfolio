@@ -17,15 +17,14 @@ const AboutSection = ({ ref }: Props) => {
   return (
     <div className={contentWrapper} ref={ref}>
       <div className={title}>{about}</div>
-      <div className="grid grid-cols-2 ml-[16px]">
-        <div className="">
-          {education}
+      <div className="grid grid-cols-2 gap-6 ml-[16px]">
+        <div className="bg-gray-300 p-8 rounded-2xl text-2xl">
+          <div className="pb-4">{education}</div>
           <div>{degree}</div>
-          {/** TODO: Make bold font work */}
           <div className="font-bold">{school}</div>
         </div>
-        <div className="">
-          {experience}
+        <div className="bg-gray-300 p-8 rounded-2xl text-2xl">
+          <div className="pb-4">{experience}</div>
           {experiences.map((exp, i) => (
             <div key={i}>{exp}</div>
           ))}

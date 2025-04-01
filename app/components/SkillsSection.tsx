@@ -1,10 +1,5 @@
 import { MutableRefObject } from "react";
-import {
-  contentWrapper,
-  interestWrapper,
-  skillImageWrapper,
-  title,
-} from "../styles";
+import { contentWrapper, skillImageWrapper, subTitle, title } from "../styles";
 
 import { languages, skillsTitle, technologiesFrameworks } from "../utils";
 import Image from "next/image";
@@ -17,27 +12,33 @@ const SkillsSection = ({ ref }: Props) => {
   return (
     <div className={contentWrapper} ref={ref}>
       <div className={title}>{skillsTitle}</div>
-      <div>Languages</div>
-      <div className="grid sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
+      <div className={subTitle}>Languages</div>
+      <div className="flex items-center justify-evenly px-10 py-8">
         {languages.map((language, i) => (
-          <div key={i} className={`p-2 ${interestWrapper}`}>
+          <div key={i} className={`flex flex-col items-center group`}>
             <Image
               alt=""
-              className={skillImageWrapper}
+              className={`group-hover:w-[90px] group-hover:h-[90px] ${skillImageWrapper} transition duration-300 ease-in`}
               src={language.image}
             />
-            {/* <div className={interestTitleAndDescription}>
-              <div className={interestTitle}>{language.name}</div>
-            </div> */}
+            <div className="opacity-0 group-hover:opacity-100">
+              {language.name}
+            </div>
           </div>
         ))}
       </div>
-      <div>Technologies & Frameworks</div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      <div className={subTitle}>Technologies & Frameworks</div>
+      <div className="flex items-center justify-evenly px-10 py-8">
         {technologiesFrameworks.map((framework, i) => (
-          <div key={i}>
-            {/* <div>{framework.name}</div> */}
-            <Image alt=""className={skillImageWrapper} src={framework.image} />
+          <div key={i} className={`flex flex-col items-center group`}>
+            <Image
+              alt=""
+              className={`group-hover:w-[90px] group-hover:h-[90px] ${skillImageWrapper} transition duration-300 ease-in`}
+              src={framework.image}
+            />
+            <div className="opacity-0 group-hover:opacity-100">
+              {framework.name}
+            </div>
           </div>
         ))}
       </div>
