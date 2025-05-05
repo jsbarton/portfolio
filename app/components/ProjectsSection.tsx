@@ -4,7 +4,7 @@ import OpenTabIcon from "./OpenTabIcon";
 import { Project } from "../types";
 
 type Props = {
-  ref: MutableRefObject<any>;
+  ref: MutableRefObject<HTMLDivElement | null>;
 };
 
 const projects: Project[] = [

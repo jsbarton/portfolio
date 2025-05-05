@@ -13,7 +13,7 @@ import {
 } from "../utils";
 
 type Props = {
-  ref: MutableRefObject<any>;
+  ref: MutableRefObject<HTMLDivElement | null>;
 };
 
 const AboutSection = ({ ref }: Props) => {

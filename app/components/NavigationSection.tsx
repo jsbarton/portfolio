@@ -1,17 +1,16 @@
 import { MutableRefObject } from "react";
-import { refsWrapper } from "../styles";
 import { about, projectsTitle, skillsTitle } from "../utils";
 import DisplayMode from "../i/light-mode.png";
 import Image from "next/image";
 
 type Props = {
-  aboutRef: MutableRefObject<any>;
-  interestsRef: MutableRefObject<any>;
-  projectsRef: MutableRefObject<any>;
+  aboutRef: MutableRefObject<HTMLDivElement | null>;
+  interestsRef: MutableRefObject<HTMLDivElement | null>;
+  projectsRef: MutableRefObject<HTMLDivElement | null>;
 };
 
 const NavigationSection = ({ aboutRef, interestsRef, projectsRef }: Props) => {
-  const handleScroll = (ref: MutableRefObject<any>) => {
+  const handleScroll = (ref: MutableRefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({
         behavior: "smooth",

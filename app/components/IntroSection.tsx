@@ -2,7 +2,6 @@ import {
   blinkCaretAnimation,
   externalLinksWrapper,
   introSectionWrapper,
-  introWrapper,
   profilePicture,
   sectionWrapper,
   typingAnimationText,
@@ -11,8 +10,6 @@ import Image from "next/image";
 import ProfilePic from "../i/profile-pic.jpg";
 import GitHubLogo from "../i/github-mark.svg";
 import LinkedInLogo from "../i/linked-in-logo.png";
-import DownArrow from "../i/down-arrow.png";
-import RightArrow from "../i/right-arrow.png";
 import { useEffect, useState } from "react";
 
 const IntroSection = () => {

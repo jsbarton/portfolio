@@ -5,7 +5,7 @@ import { languages, skillsTitle, technologiesFrameworks } from "../utils";
 import Image from "next/image";
 
 type Props = {
-  ref: MutableRefObject<any>;
+  ref: MutableRefObject<HTMLDivElement | null>;
 };
 
 const SkillsSection = ({ ref }: Props) => {
