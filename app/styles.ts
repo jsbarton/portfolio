@@ -5,7 +5,7 @@
 export const pageWrapper = "flex flex-col";
 export const sectionWrapper = "flex flex-col";
 export const introSectionWrapper =
-  "flex flex-col lg:flex-row h-screen justify-center";
+  "flex flex-col lg:flex-row font-medium h-screen justify-center";
 
 /**
  * Styles for Portfolio intro.

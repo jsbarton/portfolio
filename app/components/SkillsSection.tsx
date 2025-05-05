@@ -13,7 +13,7 @@ const SkillsSection = ({ ref }: Props) => {
     <div className={contentWrapper} ref={ref}>
       <div className={title}>{skillsTitle}</div>
       <div className={subTitle}>Languages</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 items-center justify-evenly px-10 py-8">
+      <div className="grid grid-cols-2 md:grid-cols-7 md:gap-8 px-10 py-8">
         {languages.map((language, i) => (
           <div key={i} className={`flex flex-col items-center group`}>
             <Image
@@ -28,7 +28,7 @@ const SkillsSection = ({ ref }: Props) => {
         ))}
       </div>
       <div className={subTitle}>Technologies & Frameworks</div>
-      <div className="grid grid-cols-2 md:grid-cols-7 items-center justify-evenly px-10 py-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 md:gap-8  px-10 py-8">
         {technologiesFrameworks.map((framework, i) => (
           <div key={i} className={`flex flex-col items-center group`}>
             <Image
