@@ -11,9 +11,6 @@ const projects: Project[] = [
   { name: "sample name", imgUrl: "", link: "" },
   { name: "sample name", imgUrl: "", link: "" },
   { name: "sample name", imgUrl: "", link: "" },
-  { name: "sample name", imgUrl: "", link: "" },
-  { name: "sample name", imgUrl: "", link: "" },
-  { name: "sample name", imgUrl: "", link: "" },
 ];
 const ProjectsSection = ({ ref }: Props) => {
   return (

@@ -1,8 +1,6 @@
 "use client";
 import { useRef } from "react";
-import {
-  pageWrapper,
-} from "./styles";
+import { pageWrapper } from "./styles";
 import ProjectsSection from "./components/ProjectsSection";
 import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
@@ -13,16 +11,18 @@ export default function Home() {
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
-  
+
   return (
-    <>
-      <div className={pageWrapper}>
-        <NavigationSection aboutRef={aboutRef} interestsRef={skillsRef} projectsRef={projectsRef}/>
-        <IntroSection/>
-        <ProjectsSection ref={projectsRef} />
-        <AboutSection ref={aboutRef} />
-        <SkillsSection ref={skillsRef} />
-      </div>
-    </>
+    <div className={pageWrapper}>
+      <NavigationSection
+        aboutRef={aboutRef}
+        interestsRef={skillsRef}
+        projectsRef={projectsRef}
+      />
+      <IntroSection />
+      <ProjectsSection ref={projectsRef} />
+      <AboutSection ref={aboutRef} />
+      <SkillsSection ref={skillsRef} />
+    </div>
   );
 }

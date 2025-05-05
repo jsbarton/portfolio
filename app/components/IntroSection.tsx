@@ -1,6 +1,7 @@
 import {
   blinkCaretAnimation,
   externalLinksWrapper,
+  introSectionWrapper,
   introWrapper,
   profilePicture,
   sectionWrapper,
@@ -10,6 +11,8 @@ import Image from "next/image";
 import ProfilePic from "../i/profile-pic.jpg";
 import GitHubLogo from "../i/github-mark.svg";
 import LinkedInLogo from "../i/linked-in-logo.png";
+import DownArrow from "../i/down-arrow.png";
+import RightArrow from "../i/right-arrow.png";
 import { useEffect, useState } from "react";
 
 const IntroSection = () => {
@@ -17,15 +20,18 @@ const IntroSection = () => {
   const [secondLineWelcomeText, setSecondLineWelcomeText] =
     useState<string>("");
   const [thirdLineWelcomeText, setThirdLineWelcomeText] = useState<string>("");
+  const [fourthLineWelcomeText, setFourthLineWelcomeText] =
+    useState<string>("");
 
   useEffect(() => {
     const lines = [
       { text: "Name: Jordan Barton", setter: setCurrentWelcomeText },
       {
-        text: "Current Position: Fullstack Engineer II @ Quizlet",
+        text: "Current Position: Fullstack Engineer II",
         setter: setSecondLineWelcomeText,
       },
-      { text: "Location: New York, NY", setter: setThirdLineWelcomeText },
+      { text: "Company: Quizlet, Inc.", setter: setThirdLineWelcomeText },
+      { text: "Location: New York, NY", setter: setFourthLineWelcomeText },
     ];
 
     let lineIndex = 0;
@@ -51,8 +57,8 @@ const IntroSection = () => {
   }, []);
 
   return (
-    <div className={introWrapper}>
-      <div className={`${sectionWrapper} items-center mt-[125px]`}>
+    <div className={introSectionWrapper}>
+      <div className={`${sectionWrapper} items-center justify-center`}>
         <Image alt="my-face" className={profilePicture} src={ProfilePic} />
         <div className={externalLinksWrapper}>
           <Image
@@ -74,7 +80,9 @@ const IntroSection = () => {
           />
         </div>
       </div>
-      <div className={`${sectionWrapper} min-w-[55%] ml-[50px]`}>
+      <div
+        className={`${sectionWrapper} bg-babyBlue min-h-[175px] lg:mb-[60px] lg:ml-[50px] p-6 rounded-2xl self-center text-[#0a0a0a] min-w-[375px] md:min-w-[675px]`}
+      >
         <div>
           <span className={typingAnimationText}>{currentWelcomeText}</span>
           <span className={blinkCaretAnimation("LineOne")} />
@@ -86,6 +94,10 @@ const IntroSection = () => {
         <div>
           <span className={typingAnimationText}>{thirdLineWelcomeText}</span>
           <span className={blinkCaretAnimation("LineThree")} />
+        </div>
+        <div>
+          <span className={typingAnimationText}>{fourthLineWelcomeText}</span>
+          <span className={blinkCaretAnimation("LineFour")} />
         </div>
       </div>
     </div>
