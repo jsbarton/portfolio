@@ -19,7 +19,7 @@ const NavigationSection = ({ aboutRef, interestsRef, projectsRef }: Props) => {
     }
   };
   return (
-    <div className="flex font-medium justify-evenly py-6 self-end sticky top-0 w-[500px] z-50">
+    <div className="bg-white bg-opacity-50 flex font-medium justify-evenly py-6 self-end sticky top-0 w-full md:w-[500px] z-50">
       <Image className="w-[25px] h-[25px]" src={DisplayMode} alt="light mode" />
       <div onClick={() => handleScroll(projectsRef)}>{projectsTitle}</div>
       <div onClick={() => handleScroll(aboutRef)}>{about}</div>

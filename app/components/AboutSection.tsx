@@ -20,7 +20,7 @@ const AboutSection = ({ ref }: Props) => {
   return (
     <div className={`${contentWrapper} items-center`} ref={ref}>
       <div className={title}>{about}</div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-[16px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 m-[16px] px-[16px] md:px-[48px] w-[100%]">
         <div className="bg-babyBlue p-8 rounded-2xl text-m md:text-2xl">
           <div className="text-center pb-4">{education}</div>
           <div>{degree}</div>
