@@ -5,17 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --midpoint-bg: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --midpoint-bg: #334155;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inconsolata);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 300ms; 
+  transition-timing-function: ease-in;
 }

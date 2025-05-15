@@ -6,7 +6,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "media",
+  darkMode: "class", // 'media' for system preference
   theme: {
     extend: {
       colors: {
@@ -34,7 +34,7 @@ export default {
         },
         blinkCaret: {
           "0%, 100%": { backgroundColor: "transparent" },
-          "50%": { backgroundColor: "black" }, // this is going to be a problem in light/dark mode
+          "50%": { backgroundColor: "var(--midpoint-bg)" }, // this is going to be a problem in light/dark mode
         },
       },
     },

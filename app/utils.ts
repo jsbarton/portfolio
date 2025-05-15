@@ -1,4 +1,5 @@
 import PHPIcon from "./i/php.svg";
+import PHPIconLight from "./i/php-light.png";
 import ReactIcon from "./i/react.svg";
 import CSSIcon from "./i/css.svg";
 import SQLIcon from "./i/sql.svg";
@@ -9,7 +10,9 @@ import ElasticSearchIcon from "./i/elasticsearch.svg";
 import GitIcon from "./i/git.svg";
 import TailwindIcon from "./i/tailwind.svg";
 import NextIcon from "./i/nextjs.svg";
+import NextIconLight from "./i/next-light.png";
 import JavaIcon from "./i/java.svg";
+import JavaIconLight from "./i/java-light.png";
 import { Skill } from "./types";
 /**
  * Messages for Projects section.
@@ -44,7 +47,7 @@ export const skillsTitle: string = "Skills";
 export const fashionInterestDescription: string = "";
 
 // ========== Skills Section ==========
-export const languages: Skill[] = [
+export const languages = (isDarkMode: boolean): Skill[] => [
   {
     name: "Typescript",
     image: TypescriptIcon,
@@ -55,7 +58,7 @@ export const languages: Skill[] = [
   },
   {
     name: "PHP",
-    image: PHPIcon,
+    image: isDarkMode ? PHPIconLight : PHPIcon,
   },
   {
     name: "SQL",
@@ -67,7 +70,7 @@ export const languages: Skill[] = [
   },
   {
     name: "Java",
-    image: JavaIcon,
+    image: isDarkMode ? JavaIconLight : JavaIcon,
   },
   {
     name: "Kotlin",
@@ -75,14 +78,14 @@ export const languages: Skill[] = [
   },
 ];
 
-export const technologiesFrameworks: Skill[] = [
+export const technologiesFrameworks = (isDarkMode: boolean): Skill[] => [
   {
     name: "React",
     image: ReactIcon,
   },
   {
     name: "Next.js",
-    image: NextIcon,
+    image: isDarkMode ? NextIconLight : NextIcon,
   },
   {
     name: "Git",

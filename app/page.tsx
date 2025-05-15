@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
 import IntroSection from "./components/IntroSection";
 import NavigationSection from "./components/NavigationSection";
+import { DarkModeProvider } from "./hooks/useIsDarkMode";
 
 export default function Home() {
   const aboutRef = useRef(null);
@@ -13,16 +14,18 @@ export default function Home() {
   const skillsRef = useRef(null);
 
   return (
-    <div className={pageWrapper}>
-      <NavigationSection
-        aboutRef={aboutRef}
-        interestsRef={skillsRef}
-        projectsRef={projectsRef}
-      />
-      <IntroSection />
-      <ProjectsSection ref={projectsRef} />
-      <AboutSection ref={aboutRef} />
-      <SkillsSection ref={skillsRef} />
-    </div>
+    <DarkModeProvider>
+      <div className={pageWrapper}>
+        <NavigationSection
+          aboutRef={aboutRef}
+          interestsRef={skillsRef}
+          projectsRef={projectsRef}
+        />
+        <IntroSection />
+        <ProjectsSection ref={projectsRef} />
+        <AboutSection ref={aboutRef} />
+        <SkillsSection ref={skillsRef} />
+      </div>
+    </DarkModeProvider>
   );
 }

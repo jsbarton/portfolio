@@ -16,7 +16,7 @@ const ProjectsSection = ({ ref }: Props) => {
   return (
     <div className={contentWrapper} ref={ref}>
       <p className={title}>Projects</p>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 dark:text-slate-700">
         {projects.map((project, i) => (
           <div key={i} className={gridBlock}>
             <div className="group-hover:opacity-100 duration-300 ease-in font-bold pr-1 transition-opacity text-center opacity-0">

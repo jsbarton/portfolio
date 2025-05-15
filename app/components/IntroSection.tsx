@@ -78,7 +78,7 @@ const IntroSection = () => {
         </div>
       </div>
       <div
-        className={`${sectionWrapper} bg-babyBlue min-h-[175px] lg:mb-[60px] lg:ml-[50px] p-6 rounded-2xl self-center text-[#0a0a0a] min-w-[375px] md:min-w-[675px]`}
+        className={`${sectionWrapper} bg-babyBlue min-h-[175px] lg:mb-[60px] lg:ml-[50px] p-6 rounded-2xl self-center dark:text-slate-700 min-w-[375px] md:min-w-[675px]`}
       >
         <div>
           <span className={typingAnimationText}>{currentWelcomeText}</span>
