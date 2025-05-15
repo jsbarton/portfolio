@@ -25,9 +25,9 @@ export const blinkCaretAnimation = (lineVersion: string) =>
  * Styles for Projects and About section.
  */
 
-export const contentWrapper = "h-screen flex flex-col my-10 w-full";
+export const contentWrapper = "h-screen flex flex-col my-10 pt-6 w-full";
 export const title = "self-center text-3xl";
-export const subTitle = "ml-4 mb-6 self-center text-2xl";
+export const subTitle = "mx-4 my-6 self-center text-2xl";
 export const gridBlock =
   "bg-gray-100 hover:bg-gray-300 h-[200px] flex justify-center items-center p-4 relative group rounded-2xl transition duration-300 ease-in";
 export const skillImageWrapper = "h-[75px] w-[75px] md:w-[100px] md:h-[100px]";
