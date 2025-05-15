@@ -8,12 +8,15 @@ const inconsolata = localFont({
   weight: "100 900",
 });
 
-{
-  /** TODO: Add favion and OG tags */
-}
 export const metadata: Metadata = {
   title: "Jordan Barton's Portfolio",
-  description: "Let's connect!",
+  description: "Mid-level Software Engineer Portfolio",
+  openGraph: {
+    title: "Jordan Barton's Portfolio",
+    description: "Mid-level Software Engineer Portfolio",
+    url: "jordanbarton.dev",
+    images: "https://jordan-barton.dev/favicon.png",
+  },
 };
 
 export default function RootLayout({
