@@ -1,7 +1,7 @@
 const OpenTabIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in"
+    className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in"
     width="18"
     height="18"
     fill="none"
