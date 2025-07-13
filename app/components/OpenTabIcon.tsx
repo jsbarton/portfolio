@@ -1,7 +1,11 @@
-const OpenTabIcon = () => (
+type Props = {
+  color?: string;
+};
+
+const OpenTabIcon = ({ color }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in"
+    className={`relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in ${color ? `text-${color}` : ""}`}
     width="18"
     height="18"
     fill="none"

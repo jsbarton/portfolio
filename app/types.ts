@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export type Project = {
   name: string;
-  gifUrl: string;
+  videoUrl: string;
   link: string;
 };
 

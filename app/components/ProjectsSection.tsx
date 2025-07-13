@@ -10,20 +10,26 @@ type Props = {
 const projects: Project[] = [
   {
     name: "Scratch Notes App",
-    gifUrl: "/scratch.gif",
+    videoUrl: "/scratch.mp4",
     link: "https://scratchserverless.com/",
   },
   {
-    name: "Coming soon!",
-    gifUrl: "",
-    link: "",
+    name: "Python AI Agent",
+    videoUrl: "/ai_agent.mp4",
+    link: "https://github.com/jsbarton/python_ai_agent",
   },
   {
     name: "Coming soon!",
-    gifUrl: "",
+    videoUrl: "",
     link: "",
   },
 ];
+
+// Helper function to determine if URL is a video
+const isVideoUrl = (url: string): boolean => {
+  const videoExtensions = [".mp4", ".webm", ".ogg", ".mov", ".avi"];
+  return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext));
+};
 
 const ProjectsSection = ({ ref }: Props) => {
   return (
@@ -38,20 +44,34 @@ const ProjectsSection = ({ ref }: Props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {project.gifUrl && (
-              <div
-                className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                style={{
-                  backgroundImage: `url(${project.gifUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-            )}
-            <div className="relative z-10 group-hover:opacity-100 duration-300 ease-in font-bold pr-1 transition-opacity text-center opacity-0">
+            {project.videoUrl &&
+              (isVideoUrl(project.videoUrl) ? (
+                <video
+                  className="absolute top-0 left-0 w-full h-full z-0"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={project.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <div
+                  className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                  style={{
+                    backgroundImage: `url(${project.videoUrl})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+              ))}
+            <div
+              className={`relative z-10 group-hover:opacity-100 duration-300 ease-in font-bold pr-1 transition-opacity text-center opacity-0 ${i === 1 ? "text-white" : ""}`}
+            >
               {project.name}
             </div>
-            <OpenTabIcon />
+            <OpenTabIcon color={i == 1 ? "white" : undefined} />
           </a>
         ))}
       </div>
